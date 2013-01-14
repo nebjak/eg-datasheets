@@ -1,0 +1,117 @@
+<%= form_for(@small_generator) do |f| %>
+  <% if @small_generator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@small_generator.errors.count, "error") %> prohibited this small_generator from being saved:</h2>
+
+      <ul>
+      <% @small_generator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :kva_max %><br />
+    <%= f.text_field :kva_max %>
+  </div>
+  <div class="field">
+    <%= f.label :kva_cont %><br />
+    <%= f.text_field :kva_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :kw_max %><br />
+    <%= f.text_field :kw_max %>
+  </div>
+  <div class="field">
+    <%= f.label :kw_cont %><br />
+    <%= f.text_field :kw_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br />
+    <%= f.text_field :start %>
+  </div>
+  <div class="field">
+    <%= f.label :dimenzije %><br />
+    <%= f.text_field :dimenzije %>
+  </div>
+  <div class="field">
+    <%= f.label :masa %><br />
+    <%= f.number_field :masa %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_proizvodjac %><br />
+    <%= f.text_field :motor_proizvodjac %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_tip %><br />
+    <%= f.text_field :motor_tip %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_hp %><br />
+    <%= f.text_field :motor_hp %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_rpm %><br />
+    <%= f.number_field :motor_rpm %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_cilindri %><br />
+    <%= f.number_field :motor_cilindri %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_cm3 %><br />
+    <%= f.number_field :motor_cm3 %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_gorivo %><br />
+    <%= f.text_field :motor_gorivo %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_hladjenje %><br />
+    <%= f.text_field :motor_hladjenje %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_potrosnja_75 %><br />
+    <%= f.text_field :motor_potrosnja_75 %>
+  </div>
+  <div class="field">
+    <%= f.label :motor_rezervoar %><br />
+    <%= f.text_field :motor_rezervoar %>
+  </div>
+  <div class="field">
+    <%= f.label :autonomija %><br />
+    <%= f.text_field :autonomija %>
+  </div>
+  <div class="field">
+    <%= f.label :nivo_buke %><br />
+    <%= f.number_field :nivo_buke %>
+  </div>
+  <div class="field">
+    <%= f.label :generator_proizvodjac %><br />
+    <%= f.text_field :generator_proizvodjac %>
+  </div>
+  <div class="field">
+    <%= f.label :generator_tip %><br />
+    <%= f.text_field :generator_tip %>
+  </div>
+  <div class="field">
+    <%= f.label :napon %><br />
+    <%= f.text_field :napon %>
+  </div>
+  <div class="field">
+    <%= f.label :frekvencija %><br />
+    <%= f.number_field :frekvencija %>
+  </div>
+  <div class="field">
+    <%= f.label :panel %><br />
+    <%= f.text_field :panel %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
