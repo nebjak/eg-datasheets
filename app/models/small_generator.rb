@@ -25,4 +25,7 @@ class SmallGenerator
   field :napon, type: String
   field :frekvencija, type: Integer
   field :panel, type: String
+
+  #default scope to sort by power
+  default_scope order_by(kva_max: "asc")
 end

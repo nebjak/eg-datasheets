@@ -1,67 +1,30 @@
-<h1>Listing small_generators</h1>
+<h1>Mali prenosni agregati</h1>
 
-<table>
+<table class="table generators_list">
   <tr>
     <th>Model</th>
-    <th>Kva max</th>
-    <th>Kva cont</th>
-    <th>Kw max</th>
-    <th>Kw cont</th>
-    <th>Start</th>
-    <th>Dimenzije</th>
-    <th>Masa</th>
-    <th>Motor proizvodjac</th>
-    <th>Motor tip</th>
-    <th>Motor hp</th>
-    <th>Motor rpm</th>
-    <th>Motor cilindri</th>
-    <th>Motor cm3</th>
-    <th>Motor gorivo</th>
-    <th>Motor hladjenje</th>
-    <th>Motor potrosnja 75</th>
-    <th>Motor rezervoar</th>
-    <th>Autonomija</th>
-    <th>Nivo buke</th>
-    <th>Generator proizvodjac</th>
-    <th>Generator tip</th>
-    <th>Napon</th>
-    <th>Frekvencija</th>
+    <th>Snaga (max)</th>
+    <th>Snaga (cont)</th>
+    <th>Motor</th>
+    <th>Rezervoar</th>
+    <th>Generator</th>
     <th>Panel</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @small_generators.each do |small_generator| %>
   <tr>
-    <td><%= small_generator.model %></td>
-    <td><%= small_generator.kva_max %></td>
-    <td><%= small_generator.kva_cont %></td>
-    <td><%= small_generator.kw_max %></td>
-    <td><%= small_generator.kw_cont %></td>
-    <td><%= small_generator.start %></td>
-    <td><%= small_generator.dimenzije %></td>
-    <td><%= small_generator.masa %></td>
+    <td><%= link_to small_generator.model, small_generator %></td>
+    <td><%= small_generator.kva_max %> kVA</td>
+    <td><%= small_generator.kva_cont %> kVA</td>
     <td><%= small_generator.motor_proizvodjac %></td>
-    <td><%= small_generator.motor_tip %></td>
-    <td><%= small_generator.motor_hp %></td>
-    <td><%= small_generator.motor_rpm %></td>
-    <td><%= small_generator.motor_cilindri %></td>
-    <td><%= small_generator.motor_cm3 %></td>
-    <td><%= small_generator.motor_gorivo %></td>
-    <td><%= small_generator.motor_hladjenje %></td>
-    <td><%= small_generator.motor_potrosnja_75 %></td>
-    <td><%= small_generator.motor_rezervoar %></td>
-    <td><%= small_generator.autonomija %></td>
-    <td><%= small_generator.nivo_buke %></td>
+    <td><%= small_generator.motor_rezervoar %> l</td>
     <td><%= small_generator.generator_proizvodjac %></td>
-    <td><%= small_generator.generator_tip %></td>
-    <td><%= small_generator.napon %></td>
-    <td><%= small_generator.frekvencija %></td>
     <td><%= small_generator.panel %></td>
-    <td><%= link_to 'Show', small_generator %></td>
-    <td><%= link_to 'Edit', edit_small_generator_path(small_generator) %></td>
-    <td><%= link_to 'Destroy', small_generator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+      <%= link_to 'Edit', edit_small_generator_path(small_generator), class: "btn btn-warning btn-mini" %>
+      <%= link_to 'Delete', small_generator, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-mini" %>
+    </td>
   </tr>
 <% end %>
 </table>

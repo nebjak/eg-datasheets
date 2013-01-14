@@ -11,3 +11,11 @@
  *= require_self
  *= require bootstrap/bootstrap
  */
+
+table.generators_list {
+  width: 100%;
+
+  td, th {
+    text-align: center;
+  }
+}
