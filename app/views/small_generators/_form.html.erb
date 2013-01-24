@@ -1,0 +1,212 @@
+<%= form_for(@small_generator, html: {class: "form-horizontal"}) do |f| %>
+  <% if @small_generator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@small_generator.errors.count, "error") %> prohibited this small_generator from being saved:</h2>
+
+      <ul>
+      <% @small_generator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :model, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :model %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kva_max, "Stand by snaga", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :kva_max %>
+        <span class="add-on">kVA</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kva_cont, "Prime snaga", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :kva_cont %>
+        <span class="add-on">kVA</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kw_max, "Stand by snaga", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :kw_max %>
+        <span class="add-on">kW</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kw_cont, "Prime snaga", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :kw_cont %>
+        <span class="add-on">kW</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start, class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :start %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dimenzije, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :dimenzije %>
+        <span class="add-on">mm</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :masa, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.number_field :masa %>
+        <span class="add-on">kg</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_proizvodjac, "Proizvođač motora", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :motor_proizvodjac %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_tip, "Tip motora", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :motor_tip %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_hp, "Snaga motora", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :motor_hp %>
+        <span class="add-on">hp</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_rpm, "Broj obrtaja", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.number_field :motor_rpm %>
+        <span class="add-on">rpm</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_cilindri, "Broj cilindara", class: "control-label"  %>
+    <div class="controls">
+      <%= f.number_field :motor_cilindri %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_cm3, "Zapremina motora", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.number_field :motor_cm3 %>
+        <span class="add-on">cm<sup>3</sup></span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_gorivo, "Pogonsko gorivo", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :motor_gorivo %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_hladjenje, "Vrsta hlađenja", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :motor_hladjenje %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_potrosnja_75, "Potrošnja na 75%", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :motor_potrosnja_75 %>
+        <span class="add-on">l/h</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_rezervoar, "Zapremina rezervoara", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :motor_rezervoar %>
+        <span class="add-on">l</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :autonomija, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :autonomija %>
+        <span class="add-on">h</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :nivo_buke, class: "control-label"  %>
+    <div class="controls">
+      <%= f.number_field :nivo_buke %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :generator_proizvodjac, "Proizvođač generatora", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :generator_proizvodjac %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :generator_tip, "Tip generatora", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :generator_tip %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :napon, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :napon %>
+        <span class="add-on">V</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :frekvencija, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.number_field :frekvencija %>
+        <span class="add-on">Hz</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :panel, class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :panel %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <div class="actions">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

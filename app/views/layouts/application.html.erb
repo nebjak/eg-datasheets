@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="/">Datasheets</a>
+      <ul class="nav">
+        <li><%= link_to "Početna", root_path %></li>
+        <li><%= link_to "Mali agregati", small_generators_path %></li>
+        <li><a href="#">Industrijski agregati</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

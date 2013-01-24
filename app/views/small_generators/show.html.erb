@@ -1,0 +1,170 @@
+<% if flash[:notice] %>
+  <div class="alert alert-info">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<div class="page-header">
+  <h1><%= @small_generator.model %></h1>
+</div>
+<div class="row">
+  <div class="span3">
+    <strong>Stand by snaga</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @small_generator.kva_max, separator: "," %> kVA
+  </div>
+  <div class="span3">
+    <strong>Prime snaga</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @small_generator.kva_cont, separator: "," %> kVA
+  </div>
+  <div class="span3">
+    <strong>Stand by snaga</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @small_generator.kw_max, separator: "," %> kW
+  </div>
+  <div class="span3">
+    <strong>Prime snaga</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @small_generator.kw_cont, separator: "," %> kW
+  </div>
+  <div class="span3">
+    <strong>Napon</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.napon %> V
+  </div>
+  <div class="span3">
+    <strong>Frekvencija</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.frekvencija %> Hz
+  </div>
+  <div class="span3">
+    <strong>Start</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.start == "E" ? "Elektro start (ključ)" : "Ručni start (poteznica)" %>
+  </div>
+  <div class="span3">
+    <strong>Nivo buke</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.nivo_buke %> dB
+  </div>
+  <div class="span3">
+    <strong>Dimenzije (DxŠxV)</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.dimenzije %> mm
+  </div>
+  <div class="span3">
+    <strong>Masa</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.masa %> kg
+  </div>
+  <div class="span3">
+    <strong>Autonomija</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @small_generator.autonomija, separator: "," %> h
+  </div>
+  <div class="span3">
+    <strong>Tip panela</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.panel %>
+  </div>
+</div>
+<div class="span12">
+  <h3>Motor</h3>
+</div>
+<div class="row">
+  <div class="span3">
+    <strong>Proizvođač</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.motor_proizvodjac %>
+  </div>
+  <div class="span3">
+    <strong>Tip motora</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.motor_tip %>
+  </div>
+  <div class="span3">
+    <strong>Pogonsko gorivo</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.motor_gorivo %>
+  </div>
+  <div class="span3">
+    <strong>Vrsta hlađenja</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.motor_hladjenje %>
+  </div>
+  <div class="span3">
+    <strong>Snaga motora</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @small_generator.motor_hp, separator: "," %> hp
+  </div>
+  <div class="span3">
+    <strong>Zapremina motora</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.motor_cm3 %> cm<sup>3</sup>
+  </div>
+  <div class="span3">
+    <strong>Broj obrtaja u minuti</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.motor_rpm %> rpm
+  </div>
+  <div class="span3">
+    <strong>Broj cilindara</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.motor_cilindri %>
+  </div>
+  <div class="span3">
+    <strong>Zapremina rezervoara</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @small_generator.motor_rezervoar, separator: "," %> l
+  </div>
+  <div class="span3">
+    <strong>Potrošnja na 75% opterećenja</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @small_generator.motor_potrosnja_75, separator: "," %> l/h
+  </div>
+</div>
+<div class="span12">
+  <h3>Generator</h3>
+</div>
+<div class="row">
+  <div class="span3">
+    <strong>Proizvođač</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.generator_proizvodjac %>
+  </div>
+  <div class="span3">
+    <strong>Tip generatora</strong>
+  </div>
+  <div class="span3">
+    <%= @small_generator.generator_tip %>
+  </div>
+</div>
+<% 3.times do %>
+  <br>
+<% end %>
+<%= link_to 'Edit', edit_small_generator_path(@small_generator) %> |
+<%= link_to 'Back', small_generators_path %>
