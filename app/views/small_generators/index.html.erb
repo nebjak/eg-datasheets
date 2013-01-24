@@ -1,5 +1,11 @@
 <h1>Mali prenosni agregati</h1>
-
+<div class="row">
+  <div class="span12">
+    <p>
+      <%= link_to '<i class="icon-file icon-white"></i> Novi agregat'.html_safe, new_small_generator_path, class: "btn btn-primary" %>
+    </p>
+  </div>
+</div>
 <table class="table generators_list">
   <tr>
     <th>Model</th>
@@ -22,13 +28,9 @@
     <td><%= small_generator.generator_proizvodjac %></td>
     <td><%= small_generator.panel %></td>
     <td>
-      <%= link_to 'Edit', edit_small_generator_path(small_generator), class: "btn btn-warning btn-mini" %>
-      <%= link_to 'Delete', small_generator, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-mini" %>
+      <%= link_to '<i class="icon-edit icon-white"></i> Edit'.html_safe, edit_small_generator_path(small_generator), class: "btn btn-warning btn-mini" %>
+      <%= link_to '<i class="icon-trash icon-white"></i> Delete'.html_safe, small_generator, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-mini" %>
     </td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Small generator', new_small_generator_path %>
