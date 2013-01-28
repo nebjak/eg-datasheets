@@ -20,7 +20,10 @@ class SmallGeneratorsController < ApplicationController
       format.json { render json: @small_generator }
       format.pdf do
         pdf = SmallGeneratorsPdf.new @small_generator, view_context
-        send_data pdf.render, type: "application/pdf", disposition: "inline", filename: "#{@small_generator.model}.pdf"
+        send_data pdf.render,
+                  type: "application/pdf",
+                  disposition: "inline",
+                  filename: "#{@small_generator.model}.pdf"
       end
     end
   end

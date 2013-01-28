@@ -1,7 +1,17 @@
 # encoding: utf-8
 class SmallGeneratorsPdf < Prawn::Document
   def initialize(generator, view)
-    super(page_size: "A4")
+    super(
+      page_size: "A4",
+      info: {
+        Title: generator.model,
+        Subject: "Elektro agregat Energoglobal #{generator.model}",
+        Author: "Energoglobal doo",
+        Creator: "Energoglobal doo",
+        CreationDate: Time.now,
+        ModDate: Time.now
+      }
+    )
     @generator = generator
     @view = view
     image "#{Rails.root}/app/assets/images/logo.png", width: 523
@@ -44,7 +54,7 @@ class SmallGeneratorsPdf < Prawn::Document
       ["Stand by snaga", "#{nice_num @generator.kva_max} kVA", "Prime snaga", "#{nice_num @generator.kva_cont} kVA"],
       ["Stand by snaga", "#{nice_num @generator.kw_max} kW", "Prime snaga", "#{nice_num @generator.kw_cont} kW"],
       ["Napon", "#{@generator.napon} V", "Frekvencija", "#{@generator.frekvencija} Hz"],
-      ["Start", "#{@generator.start}", "Nivo buke", "#{@generator.nivo_buke} dB"],
+      ["Start", "#{@generator.start == "E" ? "elektro start" : "ručni start"}", "Nivo buke", "#{@generator.nivo_buke} dB"],
       ["Dimenzije", "#{@generator.dimenzije} mm", "Masa", "#{@generator.masa} kg"],
       ["Autonomija", "#{nice_num @generator.autonomija} h", "Tip panela", "#{@generator.panel}"]
     ]
@@ -56,7 +66,7 @@ class SmallGeneratorsPdf < Prawn::Document
       ["Pogonsko gorivo", "#{@generator.motor_gorivo}", "Vrsta hlađenja", "#{@generator.motor_hladjenje}"],
       ["Snaga motora", "#{nice_num @generator.motor_hp} hp", "Zapremina motora", "#{@generator.motor_cm3} cm3"],
       ["Broj obrtaja", "#{@generator.motor_rpm} rpm", "Broj cilindara", "#{@generator.motor_cilindri}"],
-      ["Zapremina rezervoara", "#{nice_num @generator.motor_rezervoar}", "Potrošnja (75%)", "#{nice_num @generator.motor_potrosnja_75}"]
+      ["Zapremina rezervoara", "#{nice_num @generator.motor_rezervoar} l", "Potrošnja (75%)", "#{nice_num @generator.motor_potrosnja_75} l/h"]
     ]
   end
 

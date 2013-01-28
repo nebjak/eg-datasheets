@@ -166,5 +166,6 @@
 <% 3.times do %>
   <br>
 <% end %>
-<%= link_to 'Edit', edit_small_generator_path(@small_generator) %> |
-<%= link_to 'Back', small_generators_path %>
+<%= link_to '<i class="icon-arrow-left icon-white"></i> Back'.html_safe, small_generators_path, class: "btn btn-inverse" %>
+<%= link_to '<i class="icon-edit icon-white"></i> Edit'.html_safe, edit_small_generator_path(@small_generator), class: "btn btn-warning" %>
+<%= link_to '<i class="icon-download icon-white"></i> .pdf'.html_safe, small_generator_path(@small_generator, format: :pdf), target: "_blank", class: "btn btn-info" %>
