@@ -47,6 +47,9 @@ class SmallGeneratorsPdf < Prawn::Document
       columns(1).align = :right
       columns(3).align = :right
     end
+    move_down 20
+    image "#{Rails.root}/app/assets/images/small_generators/BS3001R.jpg", width: 250, at: [0, 230]
+    image "#{Rails.root}/app/assets/images/small_generators/#{@generator.panel}.jpg", width: 210, at: [280, 230]
     image "#{Rails.root}/app/assets/images/footer.jpg", width: 523, at: [0, 24]
   end
 
