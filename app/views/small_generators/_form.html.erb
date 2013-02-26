@@ -1,8 +1,8 @@
 <%= form_for(@small_generator, html: {class: "form-horizontal"}) do |f| %>
   <% if @small_generator.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@small_generator.errors.count, "error") %> prohibited this small_generator from being saved:</h2>
-
+    <div class="alert alert-error fade in">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Molimo Vas ispravite greške ispod</strong>
       <ul>
       <% @small_generator.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

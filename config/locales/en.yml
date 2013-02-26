@@ -3,3 +3,24 @@
 
 en:
   hello: "Hello world"
+  mongoid:
+    attributes:
+      small_generator:
+        kva_max: "Stand by snaga"
+        kva_cont: "Prime snaga"
+        kw_max: "Stand by snaga"
+        kw_cont: "Prime snaga"
+        motor_proizvodjac: "Proizvođač motora"
+        motor_tip: "Tip motora"
+        motor_hp: "Snaga motora"
+        motor_rpm: "Broj obrtaja"
+        motor_cilindri: "Broj cilindara"
+        motor_cm3: "Zapremina motora"
+        motor_gorivo: "Pogonsko gorivo"
+        motor_hladjenje: "Vrsta hlađenja"
+        motor_potrosnja_75: "Potrošnja na 75%"
+        motor_rezervoar: "Zapremina rezervoara"
+        autonomija: "Autonomija"
+        nivo_buke: "Novi buke"
+        generator_proizvodjc: "Proizvođač generatora"
+        generator_tip: "Tip generatora"
