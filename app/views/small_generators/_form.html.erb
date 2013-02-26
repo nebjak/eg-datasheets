@@ -1,0 +1,212 @@
+<%= form_for(@small_generator, html: {class: "form-horizontal"}) do |f| %>
+  <% if @small_generator.errors.any? %>
+    <div class="alert alert-error fade in">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Molimo Vas ispravite greške ispod</strong>
+      <ul>
+      <% @small_generator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :model, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :model, placeholder: "BS3001R" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kva_max, "Stand by snaga", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :kva_max, placeholder: "3" %>
+        <span class="add-on">kVA</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kva_cont, "Prime snaga", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :kva_cont, placeholder: "2.8" %>
+        <span class="add-on">kVA</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kw_max, "Stand by snaga", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :kw_max, placeholder: "3" %>
+        <span class="add-on">kW</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kw_cont, "Prime snaga", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :kw_cont, placeholder: "2.8" %>
+        <span class="add-on">kW</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start, class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :start, placeholder: "R" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dimenzije, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :dimenzije, placeholder: "800x500x500" %>
+        <span class="add-on">mm</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :masa, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.number_field :masa, placeholder: "35" %>
+        <span class="add-on">kg</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_proizvodjac, "Proizvođač motora", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :motor_proizvodjac, placeholder: "Briggs&Stratton" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_tip, "Tip motora", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :motor_tip, placeholder: "Vanguard 13H1" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_hp, "Snaga motora", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :motor_hp, placeholder: "6.5" %>
+        <span class="add-on">hp</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_rpm, "Broj obrtaja", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.number_field :motor_rpm, placeholder: "3000" %>
+        <span class="add-on">rpm</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_cilindri, "Broj cilindara", class: "control-label"  %>
+    <div class="controls">
+      <%= f.number_field :motor_cilindri, placeholder: "1" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_cm3, "Zapremina motora", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.number_field :motor_cm3, placeholder: "205" %>
+        <span class="add-on">cm<sup>3</sup></span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_gorivo, "Pogonsko gorivo", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :motor_gorivo, placeholder: "benzin" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_hladjenje, "Vrsta hlađenja", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :motor_hladjenje, placeholder: "vazdušno" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_potrosnja_75, "Potrošnja na 75%", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :motor_potrosnja_75, placeholder: "1.5" %>
+        <span class="add-on">l/h</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :motor_rezervoar, "Zapremina rezervoara", class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :motor_rezervoar, placeholder: "3.8" %>
+        <span class="add-on">l</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :autonomija, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :autonomija, placeholder: "2.5" %>
+        <span class="add-on">h</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :nivo_buke, class: "control-label"  %>
+    <div class="controls">
+      <%= f.number_field :nivo_buke, placeholder: "96" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :generator_proizvodjac, "Proizvođač generatora", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :generator_proizvodjac, placeholder: "Linz" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :generator_tip, "Tip generatora", class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :generator_tip, placeholder: "SP10SD" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :napon, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.text_field :napon, placeholder: "230" %>
+        <span class="add-on">V</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :frekvencija, class: "control-label"  %>
+    <div class="controls">
+      <div class="input-append">
+        <%= f.number_field :frekvencija, placeholder: "50" %>
+        <span class="add-on">Hz</span>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :panel, class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :panel, placeholder: "Panel 1" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <div class="actions">
+        <%= f.submit(@small_generator.new_record? ? "Napravi novi agregat" : "Sačuvaj promene" , class: "btn btn-primary") %>
+      </div>
+    </div>
+  </div>
+<% end %>

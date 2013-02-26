@@ -9,5 +9,20 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap/bootastrap
+ *= require bootstrap/bootstrap
  */
+
+table.generators_list {
+  width: 100%;
+
+  td, th {
+    text-align: center;
+  }
+}
+
+.field_with_errors {
+  display: inline;
+  input[type="text"], input[type="number"] {
+    border-color: #b94a48;
+  }
+}

@@ -3,3 +3,88 @@
 
 en:
   hello: "Hello world"
+  mongoid:
+    attributes:
+      small_generator:
+        kva_max: "Stand by snaga"
+        kva_cont: "Prime snaga"
+        kw_max: "Stand by snaga"
+        kw_cont: "Prime snaga"
+        motor_proizvodjac: "Proizvođač motora"
+        motor_tip: "Tip motora"
+        motor_hp: "Snaga motora"
+        motor_rpm: "Broj obrtaja"
+        motor_cilindri: "Broj cilindara"
+        motor_cm3: "Zapremina motora"
+        motor_gorivo: "Pogonsko gorivo"
+        motor_hladjenje: "Vrsta hlađenja"
+        motor_potrosnja_75: "Potrošnja na 75%"
+        motor_rezervoar: "Zapremina rezervoara"
+        autonomija: "Autonomija"
+        nivo_buke: "Novi buke"
+        generator_proizvodjac: "Proizvođač generatora"
+        generator_tip: "Tip generatora"
+    errors:
+      models:
+        small_generator:
+          attributes:
+            model:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+            kva_max:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+            kva_cont:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+            kw_max:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+            kw_cont:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+            start:
+              blank: "je obavezno polje"
+              invalid: "mora biti ili 'R' za ručni ili 'A' za automatski"
+            dimenzije:
+              invalid: "mora biti u formatu {dužina}x{širina}x{visina} (npr. 2500x1600x1650)"
+            masa:
+              not_a_number: "nije broj"
+            motor_proizvodjac:
+              blank: "je obavezno polje"
+            motor_tip:
+              blank: "je obavezno polje"
+            motor_hp:
+              not_a_number: "nije broj"
+            motor_rpm:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+            motor_cilindri:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+              greater_than_or_equal_to: "mora biti veći ili jednak od %{count}"
+              less_than_or_equal_to: "mora biti manji ili jednak od %{count}"
+            motor_cm3:
+              not_a_number: "nije broj"
+            motor_gorivo:
+              blank: "je obavezno polje"
+            motor_hladjenje:
+              blank: "je obavezno polje"
+            motor_potrosnja_75:
+              not_a_number: "nije broj"
+            motor_rezervoar:
+              not_a_number: "nije broj"
+            generator_proizvodjac:
+              blank: "je obavezno polje"
+            autonomija:
+              not_a_number: "nije broj"
+            nivo_buke:
+              not_a_number: "nije broj"
+            napon:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+            frekvencija:
+              blank: "je obavezno polje"
+              not_a_number: "nije broj"
+            panel:
+              blank: "je obavezno polje"
