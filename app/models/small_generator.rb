@@ -1,5 +1,6 @@
 class SmallGenerator
   include Mongoid::Document
+
   field :model, type: String
   field :kva_max, type: Float
   field :kva_cont, type: Float
@@ -25,6 +26,30 @@ class SmallGenerator
   field :napon, type: String
   field :frekvencija, type: Integer
   field :panel, type: String
+
+  # Validations
+  validates_presence_of :model, :kva_max, :kva_cont, :kw_max, :kw_cont,
+                        :start, :motor_proizvodjac, :motor_tip, :motor_rpm,
+                        :motor_cilindri, :motor_gorivo, :motor_hladjenje,
+                        :generator_proizvodjac, :napon, :frekvencija, :panel
+
+  validates :kva_max,             numericality: { greater_than: 0 }
+  validates :kva_cont,            numericality: { greater_than: 0 }
+  validates :kw_max,              numericality: { greater_than: 0 }
+  validates :kw_cont,             numericality: { greater_than: 0 }
+  validates :start,               format: { with: /^[R|A]$/ }
+  validates :dimenzije,           format: { with: /^\d+x\d+x\d+$/ }, allow_blank: true
+  validates :masa,                numericality: { greater_than: 0 }
+  validates :motor_hp,            numericality: { greater_than: 0 }, allow_blank: true
+  validates :motor_rpm,           numericality: { greater_than: 0 }
+  validates :motor_cilindri,      numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 4 }
+  validates :motor_cm3,           numericality: { greater_than: 0 }, allow_blank: true
+  validates :motor_potrosnja_75,  numericality: { greater_than: 0 }, allow_blank: true
+  validates :motor_rezervoar,     numericality: { greater_than: 0 }, allow_blank: true
+  validates :autonomija,          numericality: { greater_than: 0 }, allow_blank: true
+  validates :nivo_buke,           numericality: { greater_than: 0 }, allow_blank: true
+  validates :napon,               numericality: { greater_than: 0 }
+  validates :frekvencija,         numericality: { greater_than: 0 }
 
   #default scope to sort by power
   default_scope order_by(kva_max: "asc")
