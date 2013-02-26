@@ -18,3 +18,5 @@ gem 'jquery-rails'
 gem 'pure-bootstrap-rails'
 
 gem 'mongoid', '~> 3.0.0'
+
+gem 'prawn'

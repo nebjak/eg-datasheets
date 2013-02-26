@@ -28,6 +28,7 @@
     <td><%= small_generator.generator_proizvodjac %></td>
     <td><%= small_generator.panel %></td>
     <td>
+      <%= link_to '<i class="icon-download icon-white"></i> .pdf'.html_safe, small_generator_path(small_generator, format: :pdf), class: "btn btn-info btn-mini", target: "_blank" %>
       <%= link_to '<i class="icon-edit icon-white"></i> Edit'.html_safe, edit_small_generator_path(small_generator), class: "btn btn-warning btn-mini" %>
       <%= link_to '<i class="icon-trash icon-white"></i> Delete'.html_safe, small_generator, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-mini" %>
     </td>
