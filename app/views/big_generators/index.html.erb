@@ -1,0 +1,37 @@
+<h1>Industrijski agregati</h1>
+<div class="row">
+  <div class="span12">
+    <p>
+      <%= link_to '<i class="icon-file icon-white"></i> Novi agregat'.html_safe, new_big_generator_path, class: "btn btn-primary" %>
+    </p>
+  </div>
+</div>
+<table class="table generators_list">
+  <tr>
+    <th>Model</th>
+    <th>Snaga (max)</th>
+    <th>Snaga (cont)</th>
+    <th>Motor</th>
+    <th>Generator</th>
+    <th></th>
+  </tr>
+
+<% @big_generators.each do |big_generator| %>
+  <tr>
+    <td><%= link_to big_generator.model, big_generator %></td>
+    <td><%= big_generator.kva_max %> kVA</td>
+    <td><%= big_generator.kva_cont %> kVA</td>
+    <td><%= "#{big_generator.motor_proizvodjac} #{big_generator.motor_model}" %></td>
+    <td><%= "#{big_generator.generator_proizvodjac} #{big_generator.generator_model}" %></td>
+    <td>
+      <%= link_to '<i class="icon-download icon-white"></i> .pdf'.html_safe, big_generator_path(big_generator, format: :pdf), class: "btn btn-info btn-mini", target: "_blank" %>
+      <%= link_to '<i class="icon-edit icon-white"></i> Edit'.html_safe, edit_big_generator_path(big_generator), class: "btn btn-warning btn-mini" %>
+      <%= link_to '<i class="icon-trash icon-white"></i> Delete'.html_safe, big_generator, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-mini" %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Big generator', new_big_generator_path %>
