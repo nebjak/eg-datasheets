@@ -253,7 +253,11 @@
     <%= @big_generator.generator_izolacija %>
   </div>
 </div>
+<div class="row">
+  <div class="span12 bottom_nav">
+    <%= link_to '<i class="icon-arrow-left icon-white"></i> Back'.html_safe, big_generators_path, class: "btn btn-inverse" %>
+    <%= link_to '<i class="icon-edit icon-white"></i> Edit'.html_safe, edit_big_generator_path(@big_generator), class: "btn btn-warning" %>
+    <%= link_to '<i class="icon-download icon-white"></i> .pdf'.html_safe, big_generator_path(@big_generator, format: :pdf), target: "_blank", class: "btn btn-info" %>
+  </div>
+</div>
 
-<%= link_to '<i class="icon-arrow-left icon-white"></i> Back'.html_safe, big_generators_path, class: "btn btn-inverse" %>
-<%= link_to '<i class="icon-edit icon-white"></i> Edit'.html_safe, edit_big_generator_path(@big_generator), class: "btn btn-warning" %>
-<%= link_to '<i class="icon-download icon-white"></i> .pdf'.html_safe, big_generator_path(@big_generator, format: :pdf), target: "_blank", class: "btn btn-info" %>
