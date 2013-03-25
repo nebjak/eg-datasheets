@@ -1,0 +1,263 @@
+<% if flash[:notice] %>
+  <div class="alert alert-info">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<div class="page-header">
+  <h1><%= @big_generator.model %></h1>
+</div>
+<div class="row">
+  <div class="span3">
+    <strong>Stand by snaga</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @big_generator.kva_max, separator: "," %> kVA
+  </div>
+  <div class="span3">
+    <strong>Prime snaga</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @big_generator.kva_cont, separator: "," %> kVA
+  </div>
+  <div class="span3">
+    <strong>Stand by snaga</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @big_generator.kw_max, separator: "," %> kW
+  </div>
+  <div class="span3">
+    <strong>Prime snaga</strong>
+  </div>
+  <div class="span3">
+    <%= number_with_delimiter @big_generator.kw_cont, separator: "," %> kW
+  </div>
+  <div class="span3">
+    <strong>Napon</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.napon %> V
+  </div>
+  <div class="span3">
+    <strong>Struja</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.struja %> A
+  </div>
+  <div class="span3">
+    <strong>Frekvencija</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.frekvencija %> Hz
+  </div>
+  <div class="span3">
+    <strong>Autonomija</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.autonomija %> h
+  </div>
+  <div class="span3">
+    <strong>Nivo buke - otvoreni set</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.nivo_buke_otvoreni %> dBA
+  </div>
+  <div class="span3">
+    <strong>Nivo buke - canopy set</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.nivo_buke_canopy %> dBA
+  </div>
+  <div class="span3">
+    <strong>Dimenzije - otvoreni set</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.dimenzije_otvoreni %> mm
+  </div>
+  <div class="span3">
+    <strong>Dimenzije - canopy set</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.dimenzije_canopy %> mm
+  </div>
+  <div class="span3">
+    <strong>Masa - otvoreni set</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.masa_otvoreni %> kg
+  </div>
+  <div class="span3">
+    <strong>Masa - canopy set</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.masa_canopy %> kg
+  </div>
+  <div class="span3">
+    <strong>Kontrolna tabla i ATS</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.kontrolna_tabla_ats %>
+  </div>
+</div>
+<div class="span12">
+  <h3>Motor</h3>
+</div>
+<div class="row">
+  <div class="span3">
+    <strong>Prozivođač</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_proizvodjac %>
+  </div>
+  <div class="span3">
+    <strong>Model</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_model %>
+  </div>
+  <div class="span3">
+    <strong>Zemlja porekla</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_poreklo %>
+  </div>
+  <div class="span3">
+    <strong>Pogonsko gorivo</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_gorivo %>
+  </div>
+  <div class="span3">
+    <strong>Broj obrtaja</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_rpm %> rpm
+  </div>
+  <div class="span3">
+    <strong>Zapremina</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_cm3 %> cm<sup>3</sup>
+  </div>
+  <div class="span3">
+    <strong>Aspiracija</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_aspiracija %>
+  </div>
+  <div class="span3">
+    <strong>Broj cilindara</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_cilindri %>
+  </div>
+  <div class="span3">
+    <strong>Regulacija</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_regulacija %>
+  </div>
+  <div class="span3">
+    <strong>Kapacitet ulja</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_ulje %> l
+  </div>
+  <div class="span3">
+    <strong>Vrsta hlađenja</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_hladjenje %>
+  </div>
+  <div class="span3">
+    <strong>Kapacitet rashladne tečnosti</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_antifriz %> l
+  </div>
+  <div class="span3">
+    <strong>Potrošnja na 75%</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_potrosnja_75 %> l/h
+  </div>
+  <div class="span3">
+    <strong>Zapremina rezervoara</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.motor_rezervoar %> l
+  </div>
+</div>
+<div class="span12">
+  <h3>Generator</h3>
+</div>
+<div class="row">
+  <div class="span3">
+    <strong>Proizvođač</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_proizvodjac %>
+  </div>
+  <div class="span3">
+    <strong>Model</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_model %>
+  </div>
+  <div class="span3">
+    <strong>Zemlja porekla</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_poreklo %>
+  </div>
+  <div class="span3">
+    <strong>Broj polova</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_polovi %>
+  </div>
+  <div class="span3">
+    <strong>Napon</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_napon %> V
+  </div>
+  <div class="span3">
+    <strong>Frekvencija</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_frekvencija %> Hz
+  </div>
+  <div class="span3">
+    <strong>Regulacija napona</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_regulacija_napona %>
+  </div>
+  <div class="span3">
+    <strong>Tačnost regulacije</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_tacnost_regulacije %>
+  </div>
+  <div class="span3">
+    <strong>Stepen zaštite</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_stepen_zastite %>
+  </div>
+  <div class="span3">
+    <strong>Klasa izolacije</strong>
+  </div>
+  <div class="span3">
+    <%= @big_generator.generator_izolacija %>
+  </div>
+</div>
+<div class="row">
+  <div class="span12 bottom_nav">
+    <%= link_to '<i class="icon-arrow-left icon-white"></i> Back'.html_safe, big_generators_path, class: "btn btn-inverse" %>
+    <%= link_to '<i class="icon-edit icon-white"></i> Edit'.html_safe, edit_big_generator_path(@big_generator), class: "btn btn-warning" %>
+    <%= link_to '<i class="icon-download icon-white"></i> .pdf'.html_safe, big_generator_path(@big_generator, format: :pdf), target: "_blank", class: "btn btn-info" %>
+  </div>
+</div>
+
