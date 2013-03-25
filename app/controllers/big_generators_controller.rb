@@ -18,6 +18,13 @@ class BigGeneratorsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @big_generator }
+      format.pdf do
+        pdf = BigGeneratorsPdf.new @big_generator, view_context
+        send_data pdf.render,
+                  type: "application/pdf",
+                  disposition: "inline",
+                  filename: "#{@big_generator.model}.pdf"
+      end
     end
   end
 
