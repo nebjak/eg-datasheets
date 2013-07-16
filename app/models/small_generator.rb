@@ -37,7 +37,7 @@ class SmallGenerator
   validates :kva_cont,            numericality: { greater_than: 0 }
   validates :kw_max,              numericality: { greater_than: 0 }
   validates :kw_cont,             numericality: { greater_than: 0 }
-  validates :start,               format: { with: /^[R|A]$/ }
+  validates :start,               format: { with: /^[R|E]$/ }
   validates :dimenzije,           format: { with: /^\d+x\d+x\d+$/ }, allow_blank: true
   validates :masa,                numericality: { greater_than: 0 }
   validates :motor_hp,            numericality: { greater_than: 0 }, allow_blank: true
@@ -48,7 +48,6 @@ class SmallGenerator
   validates :motor_rezervoar,     numericality: { greater_than: 0 }, allow_blank: true
   validates :autonomija,          numericality: { greater_than: 0 }, allow_blank: true
   validates :nivo_buke,           numericality: { greater_than: 0 }, allow_blank: true
-  validates :napon,               numericality: { greater_than: 0 }
   validates :frekvencija,         numericality: { greater_than: 0 }
 
   #default scope to sort by power
