@@ -48,7 +48,6 @@ class SmallGenerator
   validates :motor_rezervoar,     numericality: { greater_than: 0 }, allow_blank: true
   validates :autonomija,          numericality: { greater_than: 0 }, allow_blank: true
   validates :nivo_buke,           numericality: { greater_than: 0 }, allow_blank: true
-  validates :napon,               numericality: { greater_than: 0 }
   validates :frekvencija,         numericality: { greater_than: 0 }
 
   #default scope to sort by power
