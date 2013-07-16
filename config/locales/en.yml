@@ -86,7 +86,7 @@ en:
               not_a_number: "nije broj"
             start:
               blank: "je obavezno polje"
-              invalid: "mora biti ili 'R' za ručni ili 'A' za automatski"
+              invalid: "mora biti ili 'R' za ručni ili 'E' za elektro start"
             dimenzije:
               invalid: "mora biti u formatu {dužina}x{širina}x{visina} (npr. 2500x1600x1650)"
             masa:
